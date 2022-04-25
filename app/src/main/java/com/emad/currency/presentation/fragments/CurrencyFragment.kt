@@ -48,7 +48,7 @@ class CurrencyFragment : Fragment() {
                 is Resource.Success -> {
                     Log.d(TAG, "onResume: SUCCESS " + it.data)
                     binding.currencyRecyclerView.adapter= currencyAdapter
-                    currencyAdapter.submitList(it.data?.results?.map { it.value }?: mutableListOf())
+                    currencyAdapter.submitList(it.data ?: mutableListOf())
                 }
             }
         })

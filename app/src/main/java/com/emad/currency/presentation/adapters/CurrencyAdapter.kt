@@ -3,8 +3,8 @@ package com.emad.currency.presentation.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.emad.currency.data.remote.dto.Currency
 import com.emad.currency.databinding.CurrencyItemLayoutBinding
+import com.emad.currency.domain.model.Currency
 import javax.inject.Inject
 
 class CurrencyAdapter @Inject constructor() :

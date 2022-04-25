@@ -1,8 +1,8 @@
 package com.emad.currency.domain.usecase.currecy
 
-import com.emad.currency.data.remote.dto.Currency
-import com.emad.currency.data.remote.dto.CurrencyResponse
+import com.emad.currency.domain.model.Currency
+
 
 interface LoadCurrencyUseCase {
-    suspend operator fun invoke(): CurrencyResponse
+    suspend operator fun invoke(): List<Currency>
 }

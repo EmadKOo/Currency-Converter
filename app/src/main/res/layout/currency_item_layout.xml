@@ -6,7 +6,7 @@
     <data>
         <variable
             name="currency"
-            type="com.emad.currency.data.remote.dto.Currency" />
+            type="com.emad.currency.domain.model.Currency" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

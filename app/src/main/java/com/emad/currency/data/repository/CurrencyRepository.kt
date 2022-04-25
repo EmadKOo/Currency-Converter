@@ -1,8 +1,8 @@
 package com.emad.currency.data.repository
 
-import com.emad.currency.data.remote.dto.Currency
-import com.emad.currency.data.remote.dto.CurrencyResponse
+import com.emad.currency.domain.model.Currency
+
 
 interface CurrencyRepository {
-    suspend fun getCurrency(): CurrencyResponse
+    suspend fun getCurrency(): List<Currency>
 }
