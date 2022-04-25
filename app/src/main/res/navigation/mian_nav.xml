@@ -2,10 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mian_nav"
-    app:startDestination="@id/currencyFragment">
+    app:startDestination="@id/currencyConverterFragment">
 
     <fragment
         android:id="@+id/currencyFragment"
         android:name="com.emad.currency.presentation.fragments.CurrencyFragment"
         android:label="CurrencyFragment" />
+    <fragment
+        android:id="@+id/currencyConverterFragment"
+        android:name="com.emad.currency.presentation.fragments.CurrencyConverterFragment"
+        android:label="CurrencyConverterFragment" />
 </navigation>
