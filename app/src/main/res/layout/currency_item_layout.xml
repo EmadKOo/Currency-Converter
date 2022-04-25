@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="currency"
+            type="com.emad.currency.data.remote.dto.Currency" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="@dimen/_10sdp"
+        android:background="@color/white"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/symbolTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$"
+            android:text="@{currency.currencySymbol}"
+            android:fontFamily="@font/cairo_semibold"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:fontFamily="@font/cairo_semibold"
+            android:textColor="@color/black"
+            android:text="@{currency.currencyName}"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/symbolTV"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Dollar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
