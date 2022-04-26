@@ -5,6 +5,8 @@ import com.emad.currency.domain.usecase.convert.ConvertCurrencyUseCase
 import com.emad.currency.domain.usecase.convert.ConvertCurrencyUseCaseImpl
 import com.emad.currency.domain.usecase.currecy.LoadCurrencyUseCase
 import com.emad.currency.domain.usecase.currecy.LoadCurrencyUseCaseImpl
+import com.emad.currency.domain.usecase.historical.HistoricalUseCase
+import com.emad.currency.domain.usecase.historical.HistoricalUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,10 +21,13 @@ object UseCasesModule {
     fun provideCurrencyUsecase(repository: CurrencyRepository): LoadCurrencyUseCase =
         LoadCurrencyUseCaseImpl(repository)
 
-
     @Singleton
     @Provides
     fun provideConvertingCurrencyUsecase(repository: CurrencyRepository): ConvertCurrencyUseCase =
         ConvertCurrencyUseCaseImpl(repository)
 
+    @Singleton
+    @Provides
+    fun provideHistoricalUsecase(repository: CurrencyRepository): HistoricalUseCase =
+        HistoricalUseCaseImpl(repository)
 }

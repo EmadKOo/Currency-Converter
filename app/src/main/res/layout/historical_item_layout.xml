@@ -1,34 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:weightSum="2"
-    android:layout_marginHorizontal="@dimen/_10sdp"
-    android:layout_marginVertical="@dimen/_5sdp"
-    android:padding="@dimen/_10sdp"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/dateTV"
-        android:layout_width="wrap_content"
+    <data>
+        <variable
+            name="historicalItem"
+            type="com.emad.currency.domain.model.HistoricalCurrency" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_14sdp"
-        android:gravity="center"
-        android:fontFamily="@font/cairo_semibold"
-        android:layout_weight="1"
-        tools:text="14-4-2022" />
+        android:weightSum="2"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:padding="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/dateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:gravity="center"
+            android:fontFamily="@font/cairo_semibold"
+            android:text="@{historicalItem.date}"
+            android:layout_weight="1"
+            tools:text="14-4-2022" />
 
 
-    <TextView
-        android:id="@+id/historicalValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_14sdp"
-        android:gravity="center"
-        android:fontFamily="@font/cairo_semibold"
-        android:layout_weight="1"
-        tools:text="0.054665" />
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView
+            android:id="@+id/historicalValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:gravity="center"
+            android:fontFamily="@font/cairo_semibold"
+            android:layout_weight="1"
+            android:text="@{String.valueOf(historicalItem.value)}"
+            tools:text="0.054665" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
