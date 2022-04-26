@@ -2,18 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mian_nav"
-    app:startDestination="@id/historicalDataFragment">
+    app:startDestination="@id/currencyFragment">
 
     <fragment
         android:id="@+id/currencyFragment"
         android:name="com.emad.currency.presentation.fragments.CurrencyFragment"
-        android:label="CurrencyFragment" />
+        android:label="@string/currency">
+        <action
+            android:id="@+id/action_currencyFragment_to_historicalDataFragment"
+            app:destination="@id/historicalDataFragment" />
+        <action
+            android:id="@+id/action_currencyFragment_to_currencyConverterFragment"
+            app:destination="@id/currencyConverterFragment" />
+    </fragment>
     <fragment
         android:id="@+id/currencyConverterFragment"
         android:name="com.emad.currency.presentation.fragments.CurrencyConverterFragment"
-        android:label="CurrencyConverterFragment" />
+        android:label="@string/convert" />
     <fragment
         android:id="@+id/historicalDataFragment"
         android:name="com.emad.currency.presentation.fragments.HistoricalDataFragment"
-        android:label="HistoricalDataFragment" />
+        android:label="@string/historical" />
 </navigation>

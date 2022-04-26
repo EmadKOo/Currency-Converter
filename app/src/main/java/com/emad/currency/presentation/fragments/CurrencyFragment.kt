@@ -2,11 +2,10 @@ package com.emad.currency.presentation.fragments
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.emad.currency.R
 import com.emad.currency.databinding.FragmentCurrencyBinding
 import com.emad.currency.presentation.adapters.CurrencyAdapter
@@ -23,6 +22,10 @@ class CurrencyFragment : Fragment() {
     @Inject
     lateinit var currencyAdapter: CurrencyAdapter
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,5 +55,23 @@ class CurrencyFragment : Fragment() {
                 }
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.currencyConvertedItem -> {
+                findNavController().navigate(CurrencyFragmentDirections.actionCurrencyFragmentToCurrencyConverterFragment())
+            }
+            R.id.historicalItem ->{
+                findNavController().navigate(CurrencyFragmentDirections.actionCurrencyFragmentToHistoricalDataFragment())
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

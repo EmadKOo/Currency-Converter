@@ -6,9 +6,12 @@
     <string name="to_currency">To Currency</string>
     <string name="amount">Amount</string>
     <string name="defaultAmount">Default amount = 1</string>
+    <string name="currency">Currency</string>
+    <string name="historical">Historical Data</string>
     <string name="convert">Convert</string>
     <string name="converted_amount">Converted Amount</string>
     <string name="date">Date</string>
     <string name="value">Value</string>
     <string name="historicalRange">Historical data for EGP to USD</string>
+    <string name="plzSelectBothCurrecnies">Please select both currencies</string>
 </resources>

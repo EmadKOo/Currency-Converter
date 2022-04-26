@@ -2,21 +2,20 @@ package com.emad.currency.presentation.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
-import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.lifecycleScope
+import com.emad.currency.R
 import com.emad.currency.databinding.FragmentCurrencyConverterBinding
 import com.emad.currency.domain.model.Currency
 import com.emad.currency.presentation.viewmodel.CurrencyViewModel
 import com.emad.currency.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
 
 private const val TAG = "CurrencyConverterFragmewq"
 @AndroidEntryPoint
@@ -77,7 +76,10 @@ class CurrencyConverterFragment : Fragment() {
     private fun initViews(){
         with(binding){
             convertBtn.setOnClickListener {
-                currencyViewModel.convertCurrency()
+                if (binding.baseSelector.text.isNotBlank() && binding.otherCurrencySelector.text.isNotBlank())
+                    currencyViewModel.convertCurrency()
+                else
+                    Toast.makeText(requireContext(), getString(R.string.plzSelectBothCurrecnies),Toast.LENGTH_LONG).show()
             }
 
             amountEt.doAfterTextChanged {
@@ -87,6 +89,11 @@ class CurrencyConverterFragment : Fragment() {
                     currencyViewModel.setAmount(it.toString().toFloat())
             }
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        currencyViewModel.convertCurrencyLiveData.postValue(null)
     }
 }
 

@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.emad.currency.R
 import com.emad.currency.databinding.FragmentHistoricalDataBinding
 import com.emad.currency.presentation.adapters.HistoricalAdapter
 import com.emad.currency.presentation.viewmodel.CurrencyViewModel
