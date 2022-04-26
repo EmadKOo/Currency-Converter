@@ -10,4 +10,11 @@ interface CurrencyApiService {
 
     @GET("currencies")
     suspend fun getCurrencies(@Query("apiKey") apiKey: String = BuildConfig.API_KEY): CurrencyResponse
+//https://free.currconv.com/api/v7/convert?apiKey=ba2a57bfff878d5ea52c&compact=ultra&q=MXN_STD
+    @GET("convert")
+    suspend fun convertCurrency(
+        @Query("apiKey") apiKey: String = BuildConfig.API_KEY,
+        @Query("q") keyword: String,
+        @Query("compact") compat: String= "ultra"
+    ): Map<String, Float>
 }
