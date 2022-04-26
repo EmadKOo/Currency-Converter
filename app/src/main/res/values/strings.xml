@@ -8,4 +8,6 @@
     <string name="defaultAmount">Default amount = 1</string>
     <string name="convert">Convert</string>
     <string name="converted_amount">Converted Amount</string>
+    <string name="date">Date</string>
+    <string name="value">Value</string>
 </resources>
