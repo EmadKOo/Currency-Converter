@@ -10,4 +10,5 @@
     <string name="converted_amount">Converted Amount</string>
     <string name="date">Date</string>
     <string name="value">Value</string>
+    <string name="historicalRange">Historical data for EGP to USD</string>
 </resources>
